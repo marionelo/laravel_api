@@ -8,44 +8,47 @@ Este proyecto esta hecho con docker, PHP (Laravel), MySQL y NGINX, a continuaci√
 ### Copiando el .env
 
 ```sh
-    $ cp .env.example .env
+# copy env to run all general project
+$ cp .env.example .env
 ```
 
 Para poder indicar puertos de nginx, base de datos con su password, existe un .env en el cual se puede configurar
 
 ```sh
-    PROJECT_NAME=nombre_del_proyecto
+# variables to our new proojects, these variables will be used 
+# by docker compose
+PROJECT_NAME=nombre_del_proyecto
 
-    HTTP_PORT=puerto_para_http
-    SSL_PORT=puerto_para_https
+HTTP_PORT=puerto_para_http
+SSL_PORT=puerto_para_https
 
-    DB_PORT_EXT=puerto_para_mysql(33061)
-    DB_ROOT_PASS=password_para_user_root_mysql
-    DB_NAME=name_to_our_database
+DB_PORT_EXT=puerto_para_mysql(33061)
+DB_ROOT_PASS=password_para_user_root_mysql
+DB_NAME=name_to_our_database
 ```
 
 
 ### Ejecutando el proyecto
 
 ```sh
-        $ docker-compose up --build -d
+# run docker project
+$ docker-compose up --build -d
 
-    Ejecutar para ver que los 3 servicios esten corriendo
-
-        $ docker ps 
+# Ejecutar para ver que los 3 servicios esten corriendo
+$ docker ps 
 ```
 
 ### Correr composer install
 
 ```sh
-        $ docker exec -ti PROJECT_NAME_composer bash
+$ docker compose exec -ti php bash
 
-    Una vez dentro ejecutar los siguientes comandos
+# Una vez dentro ejecutar los siguientes comandos
 
-        $ composer install && \
-        cp .env.example .env && \
-        chmod -R 777 storage && \
-        chmod -R 777 bootstrap
+$ composer install && \
+cp .env.example .env && \
+chmod -R 777 storage && \
+chmod -R 777 bootstrap
 ```
 
 ### Revisando el resultado
@@ -59,4 +62,6 @@ Para poder ver el resultado final, hay que verlo en el navegador con el puerto q
 
 ### Migraciones dentro de laravel
 
-Importante para poder correr las migraciones modificar el .env que esta dentro de 
+```sh
+$ php artisan migrate --seed
+```
