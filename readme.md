@@ -7,12 +7,13 @@ Este proyecto esta hecho con docker, PHP (Laravel), MySQL y NGINX, a continuaci√
 
 ### Copiando el .env
 
-```
+```sh
     $ cp .env.example .env
 ```
 
 Para poder indicar puertos de nginx, base de datos con su password, existe un .env en el cual se puede configurar
-```
+
+```sh
     PROJECT_NAME=nombre_del_proyecto
 
     HTTP_PORT=puerto_para_http
@@ -26,7 +27,7 @@ Para poder indicar puertos de nginx, base de datos con su password, existe un .e
 
 ### Ejecutando el proyecto
 
-```
+```sh
         $ docker-compose up --build -d
 
     Ejecutar para ver que los 3 servicios esten corriendo
@@ -35,7 +36,8 @@ Para poder indicar puertos de nginx, base de datos con su password, existe un .e
 ```
 
 ### Correr composer install
-```
+
+```sh
         $ docker exec -ti PROJECT_NAME_composer bash
 
     Una vez dentro ejecutar los siguientes comandos
@@ -50,7 +52,7 @@ Para poder indicar puertos de nginx, base de datos con su password, existe un .e
 
 Para poder ver el resultado final, hay que verlo en el navegador con el puerto que fue asignado dentro del .env en HTTP_PORT, por ejemplo si asignamos HTTP_PORT=8080, revisaremos con la siguiente url
 
-```
+```sh
     http://localhost:puerto_para_http
 ```
 
