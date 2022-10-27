@@ -16,3 +16,5 @@ html/yarn-error.log
 inicio.sh
 fin.sh
 final.sh
+html/.blueprint
+html/draft.yaml

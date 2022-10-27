@@ -1,9 +1,6 @@
 # Proyecto Laravel
 
-
 Este proyecto esta hecho con docker, PHP (Laravel), MySQL y NGINX, a continuación se muestran las configuraciones previas:
-
-
 
 ### Copiando el .env
 
@@ -26,7 +23,6 @@ DB_PORT_EXT=puerto_para_mysql(33061)
 DB_ROOT_PASS=password_para_user_root_mysql
 DB_NAME=name_to_our_database
 ```
-
 
 ### Ejecutando el proyecto
 
